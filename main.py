@@ -19,7 +19,7 @@ while tries != 0:
     sys.stdout.flush()
     guess = sys.stdin.readline()
     if randN == int(guess):
-        sys.stdout.buffer.write(b'Great job, ') 
+        sys.stdout.buffer.write(b'You guessed correct! Great job, ') 
         break
     tries -= 1
     if tries != 0:
