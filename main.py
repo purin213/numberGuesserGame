@@ -1,35 +1,41 @@
+#import os
 import sys
 from random import randint
 
 sys.stdout.buffer.write(b'Input your minimum number: ')
 sys.stdout.flush()
-minN = sys.stdin.buffer.readline()
+minN = sys.stdin.readline()
 sys.stdout.buffer.write(b'Now, input your maximum number: ')
 sys.stdout.flush()
-maxN = sys.stdin.buffer.readline()
-#------------fix me----------
-randN = randint(int.from_bytes(minN, "little"), int.from_bytes(maxN, "little"))
-print(randN)
+maxN = sys.stdin.readline()
+
+randN = randint(int(minN),int(maxN))
+#print(randN)
 
 tries = 10;
 
 while tries != 0:
-    sys.stdout.buffer.write(b'Now, can you guess the random number? \n')
+    sys.stdout.buffer.write(b'Can you guess the random number? \n')
     sys.stdout.flush()
-    guess = sys.stdin.buffer.readline()
-    if randN == guess:
+    guess = sys.stdin.readline()
+    if randN == int(guess):
         sys.stdout.buffer.write(b'Good job, care for another game? Yes/y No/n ')
         sys.stdout.flush()
         break
     tries -= 1
+    if tries != 0:
+        sys.stdout.buffer.write(b'Wrong number, try again. ')
 
 if tries == 0:
     sys.stdout.buffer.write(b'You ran out of tries! \n')
     sys.stdout.buffer.write(b'Better luck next time, care for another game? Yes/y No/n ')
     sys.stdout.flush()
 
+"""
 #------------fix me----------
-res = sys.stdin.buffer.readline()
+res = sys.stdin.readline()
+print(res)
+print(type(res))
 
 match res:
     case 'y':
@@ -38,3 +44,4 @@ match res:
         sys.exit("Thanks for playing")
     case _:
         sys.exit("Bad input, exiting program")
+"""
