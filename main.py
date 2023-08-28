@@ -19,17 +19,17 @@ while tries != 0:
     sys.stdout.flush()
     guess = sys.stdin.readline()
     if randN == int(guess):
-        sys.stdout.buffer.write(b'Good job, care for another game? Yes/y No/n ')
-        sys.stdout.flush()
+        sys.stdout.buffer.write(b'Great job, ') 
         break
     tries -= 1
     if tries != 0:
         sys.stdout.buffer.write(b'Wrong number, try again. ')
 
 if tries == 0:
-    sys.stdout.buffer.write(b'You ran out of tries! \n')
-    sys.stdout.buffer.write(b'Better luck next time, care for another game? Yes/y No/n ')
-    sys.stdout.flush()
+    sys.stdout.buffer.write(b'You ran out of tries! Better luck next time, ')
+
+sys.stdout.buffer.write(b'Thank you for playing!')
+sys.stdout.flush()
 
 """
 #------------fix me----------
